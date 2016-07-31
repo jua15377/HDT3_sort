@@ -24,12 +24,12 @@ public class RandomGenerator{
      * Este metodo genera los 3000 numeros dentro del archivo indicado
      * @throws IOException, Para el manejo de errores del documento
      */
-    public void generar() throws IOException {
+    public void generar(int tamano) throws IOException {
         Random random = new Random(System.currentTimeMillis());
         FileWriter writer = new FileWriter(direccion);
         PrintWriter escribir = new PrintWriter(writer);
 
-        for (int i = 0; i < 3000; i++) {
+        for (int i = 0; i < tamano; i++) {
             escribir.println(random.nextInt(3001));
         }
 

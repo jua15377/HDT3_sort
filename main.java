@@ -13,15 +13,21 @@ import java.util.Scanner;
 public class main {
     public static void main(String[] args) throws IOException {
         String nombre1,nombre2,nombre3;
+        int cantidadDeDatos;
         Scanner entrada = new Scanner(System.in);
+
         System.out.println("Bienvenidod. \nIngrese el nombre del archivo donde desea guadar los numeros aleatorios(agregue .txt al final del archivo) :");
         nombre1 = entrada.nextLine();//obteniendo el nombre del archivo para los numeros aleatorios
+        System.out.println("ingrese la cantidad de datos que desea ordenar:\n");
+        cantidadDeDatos = entrada.nextInt();//
         File archivoInicio = new File(nombre1);
         archivoInicio.createNewFile();//creando archivo
-        RandomGenerator randomGenerator = new RandomGenerator(nombre1);  // Se instancia clase para generar numeros aleatorios
-        randomGenerator.generar();  // Generar los numeros aleatorios  // Se generan los 3000 numeros aleatorios
 
-        Integer[] arreglo = randomGenerator.obtenerNumeros(nombre1, 3000);  // Obtener los numeros aleatorios en un arreglo de tamano "n"
+
+        RandomGenerator randomGenerator = new RandomGenerator(nombre1);  // Se instancia clase para generar numeros aleatorios
+        randomGenerator.generar(cantidadDeDatos);  // Generar los numeros aleatorios  // Se generan los 3000 numeros aleatorios
+
+        Integer[] arreglo = randomGenerator.obtenerNumeros(nombre1, cantidadDeDatos);  // Obtener los numeros aleatorios en un arreglo de tamano "n"
 
         SortMachine sortMachine = new SortMachine();
         Integer[] arregloOrdenado, arregloOrdenadoOrdenado;
