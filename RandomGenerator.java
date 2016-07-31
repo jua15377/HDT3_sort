@@ -36,15 +36,38 @@ public class RandomGenerator{
         escribir.close();
     }
 
-    public int[] obtenerNumeros() throws IOException{
-        int[] arreglo = new int[3000];
-        BufferedReader reader = new BufferedReader(new FileReader(direccion));  // Abre documento para su lectura
+    /**
+     * Este metodo sirve para alacenar un listado de enteros en un archivo en un arreglo de enteros
+     * @param archivo, Es el archivo fuente
+     * @return Regresa un arreglo con los numeros del archivo indicado
+     * @throws IOException
+     */
+    public Integer[] obtenerNumeros(String archivo, int tamano) throws IOException{
+        Integer[] arreglo = new Integer[tamano];
+        BufferedReader reader = new BufferedReader(new FileReader(archivo));  // Abre documento para su lectura
 
-        for (int i = 0; i < 3000; i++) {
+        for (int i = 0; i < arreglo.length; i++) {
             int numero = Integer.parseInt(reader.readLine());  // Lee linea por linea
             arreglo[i] = numero;  // Agregar al arreglo
         }
         reader.close();  // Se finaliza el lector
         return arreglo;
+    }
+
+
+    /**
+     * Este método guarda los numeros de un arreglo, en un documento dado
+     * @param arreglo, Es el arreglo fuente con los numeros a guardar
+     * @param direccionOrdenada, es el archivo de destino para los numeros
+     * @throws IOException
+     */
+    public void guardarNumeros(Integer[] arreglo, String direccionOrdenada) throws IOException{
+        FileWriter writer = new FileWriter(direccionOrdenada);
+        PrintWriter escribir = new PrintWriter(writer);
+
+        for (int i = 0; i < arreglo.length; i++) {
+            escribir.println(arreglo[i]);
+        }
+        escribir.close();
     }
 }
