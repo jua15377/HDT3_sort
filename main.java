@@ -12,13 +12,15 @@ import java.util.Scanner;
  */
 public class main {
     public static void main(String[] args) throws IOException {
+
         String nombre1,nombre2,nombre3;
         int cantidadDeDatos;
+        Integer[] arregloOrdenado;
         Scanner entrada = new Scanner(System.in);
 
-        System.out.println("Bienvenidod. \nIngrese el nombre del archivo donde desea guadar los numeros aleatorios(agregue .txt al final del archivo) :");
-        nombre1 = entrada.nextLine();//obteniendo el nombre del archivo para los numeros aleatorios
-        System.out.println("ingrese la cantidad de datos que desea ordenar:\n");
+        System.out.println("Bienvenido: \n");
+        nombre1 = "archivoFuente.txt";
+        System.out.println("ingrese la cantidad de datos que  generara y ordenara\n");
         cantidadDeDatos = entrada.nextInt();//
         File archivoInicio = new File(nombre1);
         archivoInicio.createNewFile();//creando archivo
@@ -30,39 +32,36 @@ public class main {
         Integer[] arreglo = randomGenerator.obtenerNumeros(nombre1, cantidadDeDatos);  // Obtener los numeros aleatorios en un arreglo de tamano "n"
 
         SortMachine sortMachine = new SortMachine();
-        Integer[] arregloOrdenado, arregloOrdenadoOrdenado;
 
+        //CREANDO ARCHIVOS PARA GUARDAR DATOS ORDENADOS
         nombre2 = "archivoOrdenado_1.txt";
-        nombre3 = "archivoOrdenadp_2.txt";
+        nombre3 = "archivoOrdenado_2.txt";
         File archiOrd_Uno = new File(nombre2);
         archiOrd_Uno.createNewFile();//creando archivo
         File archiOrd_Dos = new File(nombre3);
-        archiOrd_Uno.createNewFile();//creando archivo
+        archiOrd_Dos.createNewFile();//creando archivo
+
+
 
 
         /**GNOME SORT**/
-        arregloOrdenado = sortMachine.gnomeSort(arreglo);  // Ordenar arreglo desordenado
-        randomGenerator.guardarNumeros(arregloOrdenado, nombre2);  // Guardar los numeros ordenados en un .txt
-        arregloOrdenadoOrdenado = sortMachine.gnomeSort(arregloOrdenado);  // Ordena arreglo ordenado
-        randomGenerator.guardarNumeros(arregloOrdenadoOrdenado, nombre3); // Guardar los numeros ordenados ordenados en un .txt
+        //arregloOrdenado = sortMachine.gnomeSort(arreglo);  // Ordenar arreglo desordenado
+        //randomGenerator.guardarNumeros(arregloOrdenado, nombre2);  // Guardar los numeros ordenados en un .txt
 
         /**MERGE SORT**/
-        //arregloOrdenado = SortMachine.mergeSort(arreglo);  // Ordena arreglo desordenado
-        //randomGenerator.guardarNumeros(arregloOrdenado, "numerosOrdenados.txt");  // Guardar los numeros ordenados en un .txt
-        //arregloOrdenadoOrdenado = sortMachine.mergeSort(arregloOrdenado);  // Ordena arreglo ordenado
-        //randomGenerator.guardarNumeros(arregloOrdenadoOrdenado, nombre3); // Guardar los numeros ordenados ordenados en un .txt
+        arregloOrdenado = SortMachine.mergeSort(arreglo);  // Ordena arreglo desordenado
+        randomGenerator.guardarNumeros(arregloOrdenado, nombre2);  // Guardar los numeros ordenados en un .txt
+
 
         /**QUICK SORT**/
         //arregloOrdenado = sortMachine.quickSort(arreglo, 0, arreglo.length-1);  // Ordenar arreglo desordenado
-        //randomGenerator.guardarNumeros(arregloOrdenado, "numerosOrdenados.txt");  // Guardar los numeros ordenados en un .txt
-        //arregloOrdenadoOrdenado = sortMachine.quickSort(arregloOrdenado,  0, arregloOrdenado.length-1);  // Ordena arreglo ordenado
-        //randomGenerator.guardarNumeros(arregloOrdenadoOrdenado, nombre3); // Guardar los numeros ordenados ordenados en un .txt
+        //randomGenerator.guardarNumeros(arregloOrdenado, nombre2);  // Guardar los numeros ordenados en un .txt
+
 
         /**RADIX SORT**/
         //arregloOrdenado = sortMachine.radixSort(arreglo);  // Ordenar arreglo desordenado
-        //randomGenerator.guardarNumeros(arregloOrdenado, "numerosOrdenados.txt");  // Guardar los numeros ordenados en un .txt
-        //arregloOrdenadoOrdenado = sortMachine.radixSort(arregloOrdenado);  // Ordena arreglo ordenado
-        //randomGenerator.guardarNumeros(arregloOrdenadoOrdenado, nombre3); // Guardar los numeros ordenados ordenados en un .txt
+        //randomGenerator.guardarNumeros(arregloOrdenado, nombre2);  // Guardar los numeros ordenados en un .txt
+
 
     }
 }
