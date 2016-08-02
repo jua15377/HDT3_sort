@@ -6,7 +6,7 @@ import java.util.Scanner;
  * Esta clase llama a generar los numeros aleatorios, luego []
  * @author Eric Mendoza 15002
  * @author Jonnathan Juarez 15377
- * @author Jose Jo 14141
+ * @author Jose Jo 14343
  * @since 30/07/2016
  * @version 1.0
  */
