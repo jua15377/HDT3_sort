@@ -49,8 +49,8 @@ public class main {
         //randomGenerator.guardarNumeros(arregloOrdenado, nombre2);  // Guardar los numeros ordenados en un .txt
 
         /**MERGE SORT**/
-        arregloOrdenado = SortMachine.mergeSort(arreglo);  // Ordena arreglo desordenado
-        randomGenerator.guardarNumeros(arregloOrdenado, nombre2);  // Guardar los numeros ordenados en un .txt
+        //arregloOrdenado = SortMachine.mergeSort(arreglo);  // Ordena arreglo desordenado
+        //randomGenerator.guardarNumeros(arregloOrdenado, nombre2);  // Guardar los numeros ordenados en un .txt
 
 
         /**QUICK SORT**/
@@ -59,8 +59,8 @@ public class main {
 
 
         /**RADIX SORT**/
-        //arregloOrdenado = sortMachine.radixSort(arreglo);  // Ordenar arreglo desordenado
-        //randomGenerator.guardarNumeros(arregloOrdenado, nombre2);  // Guardar los numeros ordenados en un .txt
+        arregloOrdenado = sortMachine.radixSort(arreglo);  // Ordenar arreglo desordenado
+        randomGenerator.guardarNumeros(arregloOrdenado, nombre2);  // Guardar los numeros ordenados en un .txt
 
 
     }
