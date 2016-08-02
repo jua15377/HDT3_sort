@@ -5,7 +5,7 @@ import java.util.Random;
  * Esta clase genera los 3000 numeros en numeros.txt
  * @author Eric Mendoza 15002
  * @author Jonnathan Juarez 15377
- * @author Jose Jo 14141
+ * @author Jose Jo 14343
  * @since 30/07/2016
  * @version 1.0
  */

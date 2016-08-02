@@ -6,7 +6,7 @@ import java.util.Scanner;
  * Esta clase llama a generar los numeros aleatorios, luego []
  * @author Eric Mendoza 15002
  * @author Jonnathan Juarez 15377
- * @author Jose Jo 14141
+ * @author Jose Jo 14343
  * @since 30/07/2016
  * @version 1.0
  */
@@ -49,8 +49,8 @@ public class main {
         //randomGenerator.guardarNumeros(arregloOrdenado, nombre2);  // Guardar los numeros ordenados en un .txt
 
         /**MERGE SORT**/
-        arregloOrdenado = SortMachine.mergeSort(arreglo);  // Ordena arreglo desordenado
-        randomGenerator.guardarNumeros(arregloOrdenado, nombre2);  // Guardar los numeros ordenados en un .txt
+        //arregloOrdenado = SortMachine.mergeSort(arreglo);  // Ordena arreglo desordenado
+        //randomGenerator.guardarNumeros(arregloOrdenado, nombre2);  // Guardar los numeros ordenados en un .txt
 
 
         /**QUICK SORT**/
@@ -59,8 +59,8 @@ public class main {
 
 
         /**RADIX SORT**/
-        //arregloOrdenado = sortMachine.radixSort(arreglo);  // Ordenar arreglo desordenado
-        //randomGenerator.guardarNumeros(arregloOrdenado, nombre2);  // Guardar los numeros ordenados en un .txt
+        arregloOrdenado = sortMachine.radixSort(arreglo);  // Ordenar arreglo desordenado
+        randomGenerator.guardarNumeros(arregloOrdenado, nombre2);  // Guardar los numeros ordenados en un .txt
 
 
     }

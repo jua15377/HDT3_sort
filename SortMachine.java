@@ -2,7 +2,7 @@
  * Esta clase contiene los distintos metodos de ordenamiento, los cuales fueron obtenidos de distintas paginas web.
  * @author Eric Mendoza 15002
  * @author Jonnathan Juarez 15377
- * @author Jose Jo 14141
+ * @author Jose Jo 14343
  * @since 30/07/2016
  * @version 1.0
  */
